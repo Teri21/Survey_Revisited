@@ -1,0 +1,19 @@
+body {
+  padding: 2em;
+  background-color: #eeddee;
+}
+/* this container is the results page  everything below didn't work??*/
+
+#container {
+  padding: 2em;
+}
+
+span {
+  font-weight: bold;
+  color: rgb(0, 217, 255);
+}
+
+h2 {
+  border-bottom: solid;
+  color: blue;
+}

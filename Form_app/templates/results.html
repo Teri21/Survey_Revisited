@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet"
+    href=https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <title>New User</title>
+  </head>
+  <body>
+    <div id="container"></div>
+    <h2>Users submitted info:</h2>
+
+    <p><span> Name:</span> {{ results.name }}</p>
+    <p><span>Gender:</span> {{ results.gender }}</p>
+    <p><span>Dojo Location:</span> {{ results.location }}</p>
+    <p><span>Favorite Language:</span> {{ results.language }}</p>
+    <p><span>Comment:</span> {{ results.comment }}</p>
+    <a href="/" class="btn btn-primary">Go Back</a>
+  </body>
+</html>

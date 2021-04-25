@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form to be filled out: by user</title>
+
+    <link rel="stylesheet"
+    href=https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+  </head>
+  <body>
+    <h1>Fill out form:</h1>
+    <form action="/process" method="post">
+      {% csrf_token %} Your Name: <input type="text" name="name" />
+      <div>
+        <input type="radio" id="male" name="gender" value="male" />
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other" />
+        <label for="other">Other</label>
+      </div>
+      <div>
+        Dojo Location:
+        <select name="location">
+          {% for loc in locations %}
+          <option value="{{loc}}">{{loc}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      Favorite Language:
+      <select name="language">
+        {% for lang in languages %}
+        <option value="{{lang}}">{{lang}}</option>
+        {% endfor %}
+      </select>
+      <br />
+      Comment (optional):
+      <br />
+      <textarea rows="5" cols="50" name="comment"></textarea><br />
+      <button type="submit">Submit</button>
+    </form>
+    <!--  end of form  -->
+  </body>
+</html>
